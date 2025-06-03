@@ -1,0 +1,10 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+export const GraphCard = ({ title, value, data }) => {
+    return (_jsxs(Card, { className: "p-6 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer", children: [_jsxs("div", { className: "flex items-start justify-between", children: [_jsxs("div", { children: [_jsx("p", { className: "text-lg font-semibold", children: title }), _jsx("h2", { className: "text-xl font-semibold", children: value })] }), _jsx(Button, { className: "text-[#6B7280] bg-[#D1D5DB]", children: " 5 Years " })] }), _jsx("div", { className: "w-full h-[300px]", children: _jsx(ResponsiveContainer, { width: "100%", height: "100%", children: _jsxs(AreaChart, { data: data, margin: { top: 10, right: 20, left: 0, bottom: 0 }, children: [_jsx("defs", { children: _jsxs("linearGradient", { id: "colorValue", x1: "0", y1: "0", x2: "0", y2: "1", children: [_jsx("stop", { offset: "5%", stopColor: "#10B981", stopOpacity: 0.2 }), _jsx("stop", { offset: "95%", stopColor: "#10B981", stopOpacity: 0 })] }) }), _jsx(CartesianGrid, { strokeDasharray: "3 3", stroke: "rgba(209, 213, 219, 0.5)", horizontal: true, vertical: false }), _jsx(XAxis, { dataKey: "name", tick: { fill: "hsl(var(--muted-foreground))" }, tickLine: false, axisLine: {
+                                    stroke: "rgba(209, 213, 219, 0.5)",
+                                    strokeDasharray: "3 3"
+                                }, tickMargin: 10 }), _jsx(YAxis, { domain: [0, 15000], ticks: [0, 3000, 6000, 9000, 12000, 15000], tickFormatter: (value) => value.toLocaleString(), tick: { fill: "hsl(var(--muted-foreground))" }, tickLine: false, axisLine: false, width: 60 }), _jsx(Tooltip, { formatter: (value) => value.toLocaleString() }), _jsx(Area, { type: "monotone", dataKey: "value", stroke: "#10B981", strokeWidth: 2, fill: "url(#colorValue)", dot: false })] }) }) })] }));
+};
